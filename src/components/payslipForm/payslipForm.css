@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    
+    overflow: hidden;
+} 
+
+.container {
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color:#91C4F2 ;
+    padding: 40px 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 1, 0.7);
+    margin-top: 10px;
+    border-radius:10px;
+  
+}
+
+h1 {
+    font-size: 48px; 
+    font-weight: bold;
+    color: #4A90E2; 
+    text-align: center; 
+    
+    padding: 10px; 
+    text-transform: uppercase; 
+    font-family: 'Roboto', sans-serif; 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: solid;
+    width: 90%;
+  
+  }
+  
+      
+
+.form-row {
+    display: flex;
+   background-color: #91C4F2;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.form-group {
+    flex: 1;
+    margin-right: 5px;
+
+}
+.form-group.last-child {
+    margin-right: 0;
+}
+.form-group label {
+    display:flex;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(26, 25, 25);
+}
+.required {
+    color: rgb(153, 28, 28);
+}
+.form-group input {
+    width: 90%;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.buttons.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border: non;
+    
+}
+
+.buttons button {
+    padding: 5px 10px;
+    width: 80%;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.buttons button[type="reset"] {
+    background-color: #91C4F2;
+}
+
+/* Hover effect */
+.buttons button:hover {
+    background-color: #91C4F2;
+    transform: scale(1.05);
+  }
+  
+  /* Active effect */
+  .buttons button:active {
+    background-color: #2C5A9E;
+    transform: scale(0.95);
+  }
+  
+  /* Disabled state */
+  .buttons button:disabled {
+    background-color: #B0C4DE;
+    cursor: not-allowed;
+  }

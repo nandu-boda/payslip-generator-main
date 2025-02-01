@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container-ps {
+    width: 220mm;
+    height: 297mm;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.head{
+    text-align:left ;
+    color: #424242;
+    margin-bottom:30px ;
+    font-size: large;
+}
+
+.invoice-header,
+.invoice-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.invoice-header div,
+.invoice-footer div {
+    width: 20%;
+}
+
+.invoice-header div p,
+.invoice-footer div p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.invoice-details {
+    margin-bottom: 20px;
+}
+
+.invoice-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.invoice-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.invoice-total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.btns {
+    text-align: right;
+    padding: 10px;
+    
+
+    
+}
+.btns button {
+    color: #fff;
+    padding: 10px 20px;
+   margin-right: 20px;
+   border: none;
+   font-size: 15px;
+   border-radius: 10px;
+   cursor: pointer;
+   background-color: red;
+}
+.btns button:hover {
+    opacity: 0.5;
+}
+@media print {
+    .btns {
+        display: none;
+    }
+}

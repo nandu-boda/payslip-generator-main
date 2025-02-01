@@ -1,0 +1,121 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF;
+  }
+  
+  .payslip-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    min-height: 100vh;
+    overflow-y: scroll; 
+   
+  }
+  
+  .payslip-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .loading-message,
+  .error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c;
+  }
+  
+ 
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 50%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+   
+  }
+  
+  .search-bar input:focus {
+    border-color: #3498db;
+  }
+  
+  .file-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .file-category {
+    flex: 1 1 45%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .file-category:last-child {
+    margin-right: 0;
+  }
+  
+  .file-list-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  
+  .file-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .file-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .file-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .file-link {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .file-link:hover {
+    color: #2980b9;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .file-section {
+      flex-direction: column;
+    }
+  
+    .file-category {
+      flex: 1 1 100%;
+      margin-right: 0;
+    }
+  }
+  
