@@ -19,25 +19,25 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-
+// Directories for storing PDFs and Word files
 const uploadDir = './uploads';
 const pdfDir = './uploads/pdf';
 const wordDir = './uploads/word';
 
-
+// Create necessary directories if they don't exist
 [uploadDir, pdfDir, wordDir].forEach(dir => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
 });
 
-
+// Set up Multer storage for uploading files
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     if (file.mimetype === 'application/pdf') {
-      cb(null, pdfDir); 
+      cb(null, pdfDir); // Save to the PDF directory
     } else if (file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-      cb(null, wordDir); 
+      cb(null, wordDir); // Save to the Word directory
     } else {
       cb(new Error('Invalid file type'), false);
     }
@@ -50,7 +50,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-
+// Counter for generating unique payslip numbers
 const getCurrentPayslipNumber = () => {
   const counterFile = './counter.txt';
   if (fs.existsSync(counterFile)) {
@@ -69,7 +69,7 @@ const incrementPayslipNumber = () => {
   return payslipNumber;
 };
 
-
+// Route to get the next payslip number
 app.get('/next-payslip-number', (req, res) => {
   if (!req.session.payslipNumber) {
     req.session.payslipNumber = getCurrentPayslipNumber();
@@ -77,7 +77,7 @@ app.get('/next-payslip-number', (req, res) => {
   res.json({ payslipNumber: req.session.payslipNumber });
 });
 
-
+// Route to upload payslips
 app.post('/upload', upload.single('file'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
 
@@ -94,7 +94,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
   });
 });
 
-
+// Route to get all available payslips (PDF and Word files)
 app.get('/listFiles', (req, res) => {
   const pdfFiles = fs.readdirSync(pdfDir).map(file => ({
     name: file,
@@ -108,7 +108,7 @@ app.get('/listFiles', (req, res) => {
   res.json({ pdfFiles, wordFiles });
 });
 
-
+// Route to search and retrieve specific payslip based on number
 app.get('/viewPayslip', (req, res) => {
   const { payslipNumber, type } = req.query;
   const dir = type === 'pdf' ? pdfDir : wordDir;
@@ -123,10 +123,10 @@ app.get('/viewPayslip', (req, res) => {
   }
 });
 
-
+// Serve uploaded files
 app.use('/uploads', express.static(uploadDir));
 
-
+// Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

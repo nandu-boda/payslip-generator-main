@@ -53,7 +53,7 @@ const Payslip = () => {
             const imgData = canvas.toDataURL('image/png');
     
             const pdf = new jsPDF('p', 'mm', 'a4');
-            const imgWidth = 200;
+            const imgWidth = 210;
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
             const position = 0;
     
